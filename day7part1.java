@@ -14,15 +14,15 @@ public class aocday7 implements Runnable
     long relativebase = 0;
     int mode;
     static boolean finished = false;
-    long defaultvalue;
+    static long defaultvalue = 0;
     static long endvalue = 0;
     static long longestvalue = 0;
     Scanner scanner = new Scanner(System.in);
-    public aocday7(int mode, long defaultvalue)
+    public aocday7(int mode, long currentvalue)
     {
         this.mode = mode;
         this.codes = new LinkedList<Long>();
-        this.defaultvalue = defaultvalue;
+        defaultvalue = currentvalue;
     }
     public aocday7(int mode)
     {
@@ -125,7 +125,7 @@ public class aocday7 implements Runnable
         }
         else
         {
-            input = this.defaultvalue;
+            input = defaultvalue;
         }
         long value1 = 0;
         if(mode == 0)
